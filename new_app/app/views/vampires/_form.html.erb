@@ -1,0 +1,22 @@
+<%= form_with(model: vampire, local: true) do |form| %>
+  <% if vampire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vampire.errors.count, "error") %> prohibited this vampire from being saved:</h2>
+
+      <ul>
+      <% vampire.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :vampire_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,27 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Zombie, type: :model do
-  let(:zombie) { Zombie.new }
-  before { zombie.hungry! }
-  
-  it "is hungry" do
-    zombie.should be_hungry
-  end
-  
-  it "craves brains" do
-    zombie.should be_craving_brains
-  end
-  
-  context 'with a veggie preference' do
-    before { zombie.vegetrian = true }
-    it "still craves brains" do
-      # zombie.hungry!
-      # zombie.vegetrian = true
-    end
-    it "craves vegan brains" do
-      # zombie.hungry!
-      # zombie.vegetrian = true
+  context 'when hungry' do
+    it "wants brains"
+    # context "with a veggie preference", focus: true do
+    context "with a veggie preference", slow: true do
+      it "still craves brains"
+      it "prefers vegan brains"
     end
   end
-  
 end
